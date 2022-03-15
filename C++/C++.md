@@ -1,5 +1,5 @@
 * C++中各种map的使用
-  map输入C++中的key-value容器。分别有map/hash_map/unordered_map/vector_map。
+  map输入C++中的key-value容器。分别有map/hash_map/unordered_map/vector_map。对于C++中的各类map而言，若只声明了key值，但没有声明value值(int型)的话，默认value值为0，value值是string或char型默认为空。
 
   map与unordered_map之间的区别：
 	1.  map的有序的， unordered_map是无序的。
@@ -18,4 +18,7 @@
 * 继承关系的类，构造函数和析构函数的调用顺序？
   结论：先执行基类构造函数，再执行派生类构造函数。
 		析构函数与构造函数相反。先执行派生类的析构函数，再执行基类的析构函数。
-	[参考](https://blog.csdn.net/a1414345/article/details/53140502)
+[参考](https://blog.csdn.net/a1414345/article/details/53140502)
+* 为什么先调用父类构造函数，后调用子类构造函数？
+  结论：我们知道构造方法是用来初始化类对象的。如果在类中么有显式地声明构造函数。那么编译器会自动创建一个默认的构造函数；并且默认的构造函数只会在类没有显式的声明构造函数情况下才创建。   同时，类中的构造函数不同于其它成员变量，它不能被子类继承。因此在创建子类对象时，为了初始化从父类中继承到的成员变量，编译器需要先调用父类的构造函数。
+	
